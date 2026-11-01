@@ -1,0 +1,23 @@
+# Versões usadas na execução registrada em reports/metricas.json (Python 3.12)
+pandas==3.1.0
+numpy==2.5.4
+pyarrow==26.0.0
+scikit-learn==1.9.1
+xgboost==3.4.1
+optuna==5.0.0
+shap==0.54.1
+matplotlib==3.11.2
+seaborn==0.13.2
+requests==2.34.2
+joblib
+pytest
+
+# Notebooks
+jupyter==1.1.1
+nbconvert==7.17.2
+ipykernel==7.4.0
+
+# Só para src/data/externos_bigquery.py (Atlas/IDHM), que não entrou no modelo final
+# google-cloud-bigquery>=3.17
+# db-dtypes>=1.2
+openpyxl

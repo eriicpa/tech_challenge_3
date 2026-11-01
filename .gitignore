@@ -1,0 +1,23 @@
+# Ambiente
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Dados exportados da Gold: grandes e reproduzíveis pelo notebook databricks/exportar_gold_fase3.py
+data/gold/*
+!data/gold/.gitkeep
+data/sintetico/
+data/processed/*
+!data/processed/.gitkeep
+!data/processed/divisao_municipios.csv
+
+# Modelos treinados (reproduzíveis com python -m src.pipeline)
+models/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos brutos do Inep (~350 MB), baixados por python -m src.data.externos_inep --baixar
+data/external/inep_raw/
