@@ -13,8 +13,18 @@ Junto com ela entram dados do IBGE e do Inep (Censo Escolar, Saeb do 5º ano, Id
 
 ---
 
+## Apresentação
+
+[![Vídeo da apresentação](https://img.youtube.com/vi/g187S1yGc1Y/hqdefault.jpg)](https://youtu.be/g187S1yGc1Y)
+
+- Vídeo executivo (5 min): [YouTube](https://youtu.be/g187S1yGc1Y) · cópia em [reports/video_apresentacao.mp4](reports/video_apresentacao.mp4)
+- Slides: [reports/apresentacao.pdf](reports/apresentacao.pdf)
+
+---
+
 ## Sumário
 
+- [Apresentação](#apresentação)
 - [Estrutura do repositório](#estrutura-do-repositório)
 - [Contexto do problema](#contexto-do-problema)
 - [Objetivo analítico](#objetivo-analítico)
@@ -61,7 +71,7 @@ tech_challenge_3/
 │   ├── evaluation/           métricas
 │   └── visualization/        gráficos
 ├── tests/                    testes contra vazamento de dados
-├── reports/                  resultados e rankings
+├── reports/                  resultados, rankings, slides e vídeo da apresentação
 ├── images/                   gráficos
 ├── requirements.txt
 └── README.md
@@ -598,6 +608,7 @@ Cada etapa foi feita numa branch e entrou na main por pull request, nesta ordem:
 | 12 | feature/notebook-interpretabilidade | notebook de interpretabilidade |
 | 13 | feature/notebook-aplicacao | notebook de aplicação estratégica |
 | 14 | docs/readme | README completo |
+| 15 | docs/apresentacao-e-video | slides em PDF e vídeo da apresentação |
 
 ---
 
