@@ -1,0 +1,530 @@
+{
+  "configuracao": {
+    "ano_base": 2023,
+    "ano_alvo": 2024,
+    "amostra_treino": 400000,
+    "amostra_busca": 120000,
+    "n_trials": 30,
+    "rapido": false
+  },
+  "features": {
+    "numericas": [
+      "escola_matriculados",
+      "mun_taxa_rede_ant",
+      "mun_taxa_municipal_ant",
+      "mun_taxa_publica_ant",
+      "mun_media_ant",
+      "mun_participacao_ant",
+      "uf_taxa_ant",
+      "populacao",
+      "densidade",
+      "pib_per_capita",
+      "pct_va_agro",
+      "pct_urbana",
+      "taxa_alfab_adultos",
+      "pct_esgoto_adequado",
+      "inep_saeb5_lp_2023",
+      "inep_saeb5_lp_2021",
+      "inep_saeb5_lp_tendencia",
+      "inep_ideb_2023",
+      "inep_aprovacao_2ano_2023",
+      "inep_inse",
+      "inep_pct_inse_baixo",
+      "inep_pct_integral",
+      "inep_pct_biblioteca",
+      "inep_pct_internet_alunos",
+      "inep_pct_coordenador",
+      "inep_pct_material_infantil",
+      "inep_alunos_por_turma",
+      "inep_alunos_por_docente",
+      "inep_pct_rural"
+    ],
+    "categoricas": [
+      "nome_regiao",
+      "sigla_uf",
+      "rede_nome"
+    ],
+    "alta_cardinalidade": [
+      "nome_mesorregiao"
+    ]
+  },
+  "divisao": {
+    "alunos_treino": 1495576,
+    "alunos_teste": 356252,
+    "municipios_teste": 1101,
+    "prevalencia_treino": 0.40627812392264767,
+    "prevalencia_teste": 0.4152450781222714
+  },
+  "comparacao": [
+    {
+      "modelo": "Regressão Logística",
+      "roc_auc_media": 0.6589050106172339,
+      "roc_auc_desvio": 0.013953151604952623,
+      "pr_auc_media": 0.5527200467914593,
+      "pr_auc_desvio": 0.016947447666775035,
+      "log_loss_media": 0.6340559279516371,
+      "log_loss_desvio": 0.006073439384516681,
+      "brier_media": 0.22241871859880752,
+      "brier_desvio": 0.0026939955147521418,
+      "f1_media": 0.4321866682263301,
+      "f1_desvio": 0.05826871584706631,
+      "auc_treino_media": 0.6648724022758774,
+      "auc_treino_desvio": 0.002847764548346869,
+      "segundos_media": 2.7911312600001112,
+      "segundos_desvio": 0.08860858989524706,
+      "gap_treino_valid": 0.005967391658643462
+    },
+    {
+      "modelo": "Random Forest",
+      "roc_auc_media": 0.656832796499749,
+      "roc_auc_desvio": 0.015307523383709713,
+      "pr_auc_media": 0.5468653204356382,
+      "pr_auc_desvio": 0.01634075953311899,
+      "log_loss_media": 0.6347150328731621,
+      "log_loss_desvio": 0.00585579858474552,
+      "brier_media": 0.22274955872742214,
+      "brier_desvio": 0.0026501641247597433,
+      "f1_media": 0.41916743870509243,
+      "f1_desvio": 0.056594958561292014,
+      "auc_treino_media": 0.6978382536122837,
+      "auc_treino_desvio": 0.0023836278803336993,
+      "segundos_media": 7.988979979999567,
+      "segundos_desvio": 0.2056774887965852,
+      "gap_treino_valid": 0.04100545711253467
+    },
+    {
+      "modelo": "HistGradientBoosting",
+      "roc_auc_media": 0.6556299755478685,
+      "roc_auc_desvio": 0.011921961589993705,
+      "pr_auc_media": 0.5466980948362584,
+      "pr_auc_desvio": 0.01294896146995847,
+      "log_loss_media": 0.6351475940076151,
+      "log_loss_desvio": 0.004541978116817631,
+      "brier_media": 0.22300257408595997,
+      "brier_desvio": 0.00200905477803718,
+      "f1_media": 0.4303420634946201,
+      "f1_desvio": 0.05007730642347298,
+      "auc_treino_media": 0.6984312589026628,
+      "auc_treino_desvio": 0.005313799735245684,
+      "segundos_media": 8.732833760000357,
+      "segundos_desvio": 0.36912390751064333,
+      "gap_treino_valid": 0.04280128335479427
+    },
+    {
+      "modelo": "XGBoost",
+      "roc_auc_media": 0.6541163536949066,
+      "roc_auc_desvio": 0.012718015583073346,
+      "pr_auc_media": 0.5445895709890953,
+      "pr_auc_desvio": 0.013091336812519583,
+      "log_loss_media": 0.6362633202779515,
+      "log_loss_desvio": 0.005292392532326911,
+      "brier_media": 0.2234842183894404,
+      "brier_desvio": 0.0022549361975527688,
+      "f1_media": 0.4311052819069056,
+      "f1_desvio": 0.05367247227526216,
+      "auc_treino_media": 0.7175319384003458,
+      "auc_treino_desvio": 0.002634983396937192,
+      "segundos_media": 6.40616394000026,
+      "segundos_desvio": 6.467160921965472,
+      "gap_treino_valid": 0.06341558470543918
+    },
+    {
+      "modelo": "Baseline (proporção)",
+      "roc_auc_media": 0.5,
+      "roc_auc_desvio": 0.0,
+      "pr_auc_media": 0.4048195960870742,
+      "pr_auc_desvio": 0.0017744650266757571,
+      "log_loss_media": 0.674920464600432,
+      "log_loss_desvio": 0.000683737514891812,
+      "brier_media": 0.24094211150148032,
+      "brier_desvio": 0.00033770021223265644,
+      "f1_media": 0.0,
+      "f1_desvio": 0.0,
+      "auc_treino_media": 0.5,
+      "auc_treino_desvio": 0.0,
+      "segundos_media": 0.9695401200006017,
+      "segundos_desvio": 0.0323111790124436,
+      "gap_treino_valid": 0.0
+    }
+  ],
+  "optuna": {
+    "melhor_auc_cv": 0.6589897427118618,
+    "melhores_parametros": {
+      "n_estimators": 500,
+      "learning_rate": 0.01833906441884937,
+      "max_depth": 3,
+      "min_child_weight": 2.9031216226602954,
+      "subsample": 0.6196324831232136,
+      "colsample_bytree": 0.939900982691962,
+      "reg_lambda": 0.20831716973263237,
+      "reg_alpha": 6.597403218555177,
+      "gamma": 3.0537163773517286
+    },
+    "auc_xgboost_padrao_cv": 0.6541163536949066,
+    "tentativas": 30,
+    "podadas": 17
+  },
+  "curva_aprendizado": [
+    {
+      "n": 2000,
+      "auc_treino": 0.7309538035555653,
+      "auc_valid": 0.6324305219608878
+    },
+    {
+      "n": 5000,
+      "auc_treino": 0.7220594697724297,
+      "auc_valid": 0.6397915185166687
+    },
+    {
+      "n": 15000,
+      "auc_treino": 0.6972203675632851,
+      "auc_valid": 0.6390054751415586
+    },
+    {
+      "n": 40000,
+      "auc_treino": 0.6798298023226124,
+      "auc_valid": 0.6474606220514709
+    },
+    {
+      "n": 100000,
+      "auc_treino": 0.6750567083957031,
+      "auc_valid": 0.6481804841384995
+    },
+    {
+      "n": 250000,
+      "auc_treino": 0.6696578153901298,
+      "auc_valid": 0.648351226947511
+    },
+    {
+      "n": 400000,
+      "auc_treino": 0.669070723409935,
+      "auc_valid": 0.6469521697022513
+    }
+  ],
+  "selecao_final": {
+    "XGBoost otimizado": {
+      "roc_auc": 0.6563680729077885,
+      "pr_auc": 0.5460247496695713,
+      "log_loss": 0.6354880916312438,
+      "brier": 0.22318447136474115,
+      "auc_treino": 0.6683025478116399,
+      "roc_auc_desvio": 0.01460384358201766
+    },
+    "Regressão Logística": {
+      "roc_auc": 0.65791019679343,
+      "pr_auc": 0.5500433116651953,
+      "log_loss": 0.6349325077778855,
+      "brier": 0.22287255511933357,
+      "auc_treino": 0.6629611756126241,
+      "roc_auc_desvio": 0.013302105592458202
+    }
+  },
+  "modelo_final": "Regressão Logística",
+  "limiar": {
+    "f1_max": 0.29081776445630075,
+    "recall_80": 0.3435671074324048
+  },
+  "teste": {
+    "Regressão Logística": {
+      "roc_auc": 0.6645692207630358,
+      "pr_auc": 0.5635817218266841,
+      "log_loss": 0.6369400338407192,
+      "brier": 0.2236360090772414,
+      "acuracia": 0.5437399439097567,
+      "acuracia_balanceada": 0.592130324056301,
+      "precisao": 0.47336189474221585,
+      "recall": 0.8776027135911206,
+      "f1": 0.6150030589608185,
+      "limiar": 0.29081776445630075,
+      "roc_auc_ic95": [
+        0.644666859788503,
+        0.6820162215771212
+      ]
+    },
+    "Regressão Logística (limiar recall 80%)": {
+      "roc_auc": 0.6645692207630358,
+      "pr_auc": 0.5635817218266841,
+      "log_loss": 0.6369400338407192,
+      "brier": 0.2236360090772414,
+      "acuracia": 0.5944482463334585,
+      "acuracia_balanceada": 0.6135201037114484,
+      "precisao": 0.5081694173074015,
+      "recall": 0.7260319021737485,
+      "f1": 0.5978720049162175,
+      "limiar": 0.3435671074324048
+    },
+    "XGBoost otimizado": {
+      "roc_auc": 0.6676648775512826,
+      "pr_auc": 0.5655440856067525,
+      "log_loss": 0.6344118714332581,
+      "brier": 0.22252759337425232,
+      "acuracia": 0.538688698250559,
+      "acuracia_balanceada": 0.588939181806299,
+      "precisao": 0.4705221351268804,
+      "recall": 0.8853849954679156,
+      "f1": 0.6144863893357062,
+      "limiar": 0.29081776445630075
+    },
+    "Baseline (proporção)": {
+      "roc_auc": 0.5,
+      "pr_auc": 0.4152450781222714,
+      "log_loss": 0.678899172686745,
+      "brier": 0.24290766813642115,
+      "acuracia": 0.4152450781222714,
+      "acuracia_balanceada": 0.5,
+      "precisao": 0.4152450781222714,
+      "recall": 1.0,
+      "f1": 0.5868172015453509,
+      "limiar": 0.29081776445630075
+    }
+  },
+  "importancia": {
+    "permutacao_top10": [
+      {
+        "feature": "mun_taxa_rede_ant",
+        "queda_auc": 0.04595147282032519,
+        "desvio": 0.0008355614608020043
+      },
+      {
+        "feature": "inep_ideb_2023",
+        "queda_auc": 0.042622416748653594,
+        "desvio": 0.0011347285013232975
+      },
+      {
+        "feature": "mun_media_ant",
+        "queda_auc": 0.025369122585688707,
+        "desvio": 0.0009576042523029316
+      },
+      {
+        "feature": "sigla_uf",
+        "queda_auc": 0.012028185892070553,
+        "desvio": 0.001607795788905921
+      },
+      {
+        "feature": "nome_mesorregiao",
+        "queda_auc": 0.007330271847893743,
+        "desvio": 0.000849754805550898
+      },
+      {
+        "feature": "mun_participacao_ant",
+        "queda_auc": 0.004360993208244457,
+        "desvio": 0.00019914178252152174
+      },
+      {
+        "feature": "uf_taxa_ant",
+        "queda_auc": 0.003713041389217575,
+        "desvio": 0.0002024365392445908
+      },
+      {
+        "feature": "mun_taxa_publica_ant",
+        "queda_auc": 0.0033788680738402244,
+        "desvio": 0.00035886196419948054
+      },
+      {
+        "feature": "mun_taxa_municipal_ant",
+        "queda_auc": 0.002704412815792856,
+        "desvio": 0.0002632659767726775
+      },
+      {
+        "feature": "taxa_alfab_adultos",
+        "queda_auc": 0.002553197948096586,
+        "desvio": 0.0005543224758389836
+      }
+    ],
+    "shap_top10": {
+      "mun_taxa_rede_ant": 0.24278204722605778,
+      "inep_ideb_2023": 0.23981346364114814,
+      "mun_media_ant": 0.1849170978335464,
+      "mun_taxa_publica_ant": 0.12046229017242949,
+      "nome_mesorregiao": 0.10200746350976203,
+      "mun_taxa_municipal_ant": 0.09305520609336425,
+      "nome_regiao_Sudeste": 0.08485210518812801,
+      "rede_nome_Estadual": 0.08433537527380397,
+      "sigla_uf_SP": 0.05667715525441516,
+      "taxa_alfab_adultos": 0.056406114710563185
+    }
+  },
+  "municipal_agregado_teste": {
+    "municipios": 1101,
+    "mae_pp": 8.503020272362123,
+    "correlacao": 0.8091238847344421
+  },
+  "municipal_meta": {
+    "pct_nao_atingiu_meta": 0.46712538226299694,
+    "sigma_pp": 11.463418554256183,
+    "via_taxa_prevista_teste": {
+      "roc_auc": 0.8063767017418701,
+      "pr_auc": 0.7897397493345095,
+      "log_loss": 0.5325708673656848,
+      "brier": 0.17967214796092412,
+      "acuracia": 0.7148362235067437,
+      "acuracia_balanceada": 0.7132602104512217,
+      "precisao": 0.7280701754385965,
+      "recall": 0.6587301587301587,
+      "f1": 0.6916666666666667,
+      "limiar": 0.5
+    },
+    "classificador_direto_cv": [
+      {
+        "modelo": "Regressão Logística",
+        "roc_auc": 0.8109598971816429,
+        "pr_auc": 0.7741278634983673,
+        "log_loss": 0.5316399293663512,
+        "brier": 0.1772297149335184,
+        "acuracia": 0.7343824511206486,
+        "acuracia_balanceada": 0.7309822629186143,
+        "precisao": 0.7251908396946565,
+        "recall": 0.6855670103092784,
+        "f1": 0.7048224695283519,
+        "limiar": 0.5
+      },
+      {
+        "modelo": "XGBoost",
+        "roc_auc": 0.8120594315718219,
+        "pr_auc": 0.7839932102609759,
+        "log_loss": 0.5244195949743296,
+        "brier": 0.17633609681775544,
+        "acuracia": 0.7269909394372913,
+        "acuracia_balanceada": 0.7230643803913317,
+        "precisao": 0.719977863862756,
+        "recall": 0.6706185567010309,
+        "f1": 0.6944222044302109,
+        "limiar": 0.5
+      }
+    ],
+    "classificador_direto_escolhido": "XGBoost",
+    "classificador_direto_teste": {
+      "roc_auc": 0.8251738897806313,
+      "pr_auc": 0.8130337663352045,
+      "log_loss": 0.5096349716186523,
+      "brier": 0.17127522826194763,
+      "acuracia": 0.7321772639691715,
+      "acuracia_balanceada": 0.7311173533083646,
+      "precisao": 0.7383966244725738,
+      "recall": 0.6944444444444444,
+      "f1": 0.7157464212678937,
+      "limiar": 0.5
+    },
+    "gap_meta_vs_ant_2024": [
+      -32.010000000000005,
+      7.220000000000002
+    ],
+    "gap_meta_vs_ant_2025": [
+      -76.28,
+      68.9
+    ]
+  },
+  "ufs_quebra_serie": [
+    "RS"
+  ],
+  "projecao": {
+    "ano": 2025,
+    "municipios": 5352,
+    "pct_previstos_abaixo_meta": 0.5179372197309418,
+    "faixas": {
+      "Baixo": 1966,
+      "Muito alto": 1198,
+      "Moderado": 1176,
+      "Alto": 1012
+    },
+    "municipios_alerta_quebra": 441,
+    "psi_max": 0.15731410182153152,
+    "psi_features_instaveis": {
+      "mun_taxa_municipal_ant": 0.15731410182153152,
+      "mun_taxa_publica_ant": 0.12864344276825337,
+      "mun_media_ant": 0.13561658127051474
+    }
+  },
+  "clusters": {
+    "k": 3,
+    "escolha_k": [
+      {
+        "k": 2,
+        "inercia": 37551.04824041547,
+        "silhueta": 0.1888552983983505,
+        "davies_bouldin": 1.894883655096812
+      },
+      {
+        "k": 3,
+        "inercia": 33062.199552236125,
+        "silhueta": 0.17460305749798025,
+        "davies_bouldin": 1.9590703299835452
+      },
+      {
+        "k": 4,
+        "inercia": 29838.939305836426,
+        "silhueta": 0.17032189684998722,
+        "davies_bouldin": 1.77117931305703
+      },
+      {
+        "k": 5,
+        "inercia": 27826.541775732607,
+        "silhueta": 0.14505922162879897,
+        "davies_bouldin": 1.7835464359132402
+      },
+      {
+        "k": 6,
+        "inercia": 26212.7804133839,
+        "silhueta": 0.14814599013088817,
+        "davies_bouldin": 1.732934067001423
+      },
+      {
+        "k": 7,
+        "inercia": 24778.879501187097,
+        "silhueta": 0.15411352073182974,
+        "davies_bouldin": 1.7684189934534003
+      },
+      {
+        "k": 8,
+        "inercia": 23762.316335699958,
+        "silhueta": 0.14926420554869718,
+        "davies_bouldin": 1.7492485273963363
+      }
+    ],
+    "perfil": [
+      {
+        "cluster": 0,
+        "perfil": "Alto analfabetismo adulto e pouca infraestrutura",
+        "municipios": 1868,
+        "taxa_atual": 55.82,
+        "variacao_pp": 2.94,
+        "mun_participacao_ant": 92.43,
+        "desvio_taxa_escolas_ant": 16.28,
+        "taxa_alfab_adultos": 79.47,
+        "pib_per_capita": 11884.28,
+        "pct_urbana": 57.03,
+        "pct_esgoto_adequado": 15.92,
+        "densidade": 23.15
+      },
+      {
+        "cluster": 1,
+        "perfil": "Interior pouco povoado e de renda mais alta",
+        "municipios": 1569,
+        "taxa_atual": 66.7,
+        "variacao_pp": -0.66,
+        "mun_participacao_ant": 89.34,
+        "desvio_taxa_escolas_ant": 13.93,
+        "taxa_alfab_adultos": 92.02,
+        "pib_per_capita": 38421.84,
+        "pct_urbana": 65.47,
+        "pct_esgoto_adequado": 5.76,
+        "densidade": 12.73
+      },
+      {
+        "cluster": 2,
+        "perfil": "Urbano com infraestrutura",
+        "municipios": 1795,
+        "taxa_atual": 67.83,
+        "variacao_pp": 4.35,
+        "mun_participacao_ant": 90.18,
+        "desvio_taxa_escolas_ant": 14.33,
+        "taxa_alfab_adultos": 94.44,
+        "pib_per_capita": 32418.37,
+        "pct_urbana": 89.63,
+        "pct_esgoto_adequado": 78.53,
+        "densidade": 49.65
+      }
+    ]
+  },
+  "duracao_s": 568.5226886000019
+}
