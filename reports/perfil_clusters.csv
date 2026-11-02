@@ -1,0 +1,4 @@
+cluster,perfil,municipios,taxa_atual,variacao_pp,mun_participacao_ant,desvio_taxa_escolas_ant,taxa_alfab_adultos,pib_per_capita,pct_urbana,pct_esgoto_adequado,densidade
+0,Alto analfabetismo adulto e pouca infraestrutura,1868,55.82,2.94,92.43,16.28,79.47,11884.28,57.03,15.92,23.15
+1,Interior pouco povoado e de renda mais alta,1569,66.7,-0.66,89.34,13.93,92.02,38421.84,65.47,5.76,12.73
+2,Urbano com infraestrutura,1795,67.83,4.35,90.18,14.33,94.44,32418.37,89.63,78.53,49.65
